@@ -78,3 +78,8 @@ np_height_m = np_height_in * 0.0254
 # Print np_height_m
 
 print(np_height_m)
+
+print(np.array([True, 1, 2]) + np.array([3, 4, False]))
+
+#when a Python array has different variable types True is converted to 1 and False to 0
+
