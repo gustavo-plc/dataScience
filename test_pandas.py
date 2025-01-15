@@ -16,3 +16,14 @@ cars = pd.DataFrame(my_dict)
 
 # Print cars
 print(cars)
+print()
+#the row labels are not correctly set. We need to correct them
+
+# Definition of row_labels
+row_labels = ['US', 'AUS', 'JPN', 'IN', 'RU', 'MOR', 'EG']
+
+# Specify row labels of cars
+cars.index = row_labels
+
+# Print cars again
+print(cars)
