@@ -1,4 +1,5 @@
 # USING DATAFRAMES TO COMPILE INFORMATION: A NEW DATA STRUCTURE APPROACH
+# It's basically a way to store tabular data where you can label the rows and the columns.
 
 import pandas as pd
 
@@ -7,13 +8,11 @@ names = ['United States', 'Australia', 'Japan', 'India', 'Russia', 'Morocco', 'E
 dr =  [True, False, False, False, True, True, True]
 cpc = [809, 731, 588, 18, 200, 70, 45]
 
-# Import pandas as pd
-
-
 # Create dictionary my_dict with three key:value pairs: my_dict
-
+my_dict = {'country': names, 'drives_right': dr, 'cars_per_cap': cpc}
 
 # Build a DataFrame cars from my_dict: cars
-
+cars = pd.DataFrame(my_dict)
 
 # Print cars
+print(cars)
