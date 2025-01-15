@@ -5,5 +5,5 @@ from numpy import array
 
 lista = [1, 2, 3]
 
-np.array(lista) #this way, itś very clear the programmer used the numpy package
+np.array(lista) #this way, it become very clear the programmer used the numpy package
 array(lista)
