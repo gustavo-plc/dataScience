@@ -83,3 +83,15 @@ print(np.array([True, 1, 2]) + np.array([3, 4, False]))
 
 #when a Python array has different variable types True is converted to 1 and False to 0
 
+
+#booleans and logical operators inside NumPy
+
+
+my_house = np.array([18.0, 20.0, 10.75, 9.50])
+your_house = np.array([14.0, 24.0, 14.25, 9.0])
+
+# my_house greater than 18.5 or smaller than 10
+print(np.logical_or(my_house > 18.5, my_house < 10))
+
+# Both my_house and your_house smaller than 11
+print(np.logical_and(my_house < 11, your_house < 11))
