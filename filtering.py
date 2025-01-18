@@ -96,3 +96,19 @@ print()
 brics['name_lenght'] = brics['country'].apply(len)
 print(brics)
 print()
+print()
+
+#exercises
+
+# Iterate over rows of cars
+
+for lab, row in cars.iterrows():
+    print(str(lab) + ': ' + str(row['cars_per_cap']))
+
+print()
+
+for lab, row in cars.iterrows():
+    cars.loc[lab, 'COUNTRY'] = row['country'].upper()
+
+print(cars)
+print()
