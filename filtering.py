@@ -63,3 +63,29 @@ print()
 medium = np.logical_and(cpc > 100, cpc < 500)
 
 print(cars[medium])
+print()
+# LOOP DATA STRUCTURES ON PANDAS DATAFRAME
+
+for val in brics:
+    print(val) #just the column's names are printed
+
+# WE HAVE TO USE THE ITERROWS METHOD TO ITERATE IN EACH LINE
+print()
+
+for lab, val in brics.iterrows():
+    print(lab)
+    print(val)
+
+print()
+
+for lab, row in brics.iterrows():
+    print(lab + ': ' + row['capital'])
+
+print()
+
+for lab, row in brics.iterrows():
+    #creating Series on every iteration
+    brics.loc[lab, 'name_lenght'] = len(row['country'])
+print(brics)
+print()
+
