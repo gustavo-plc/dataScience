@@ -70,6 +70,7 @@ for val in brics:
     print(val) #just the column's names are printed
 
 # WE HAVE TO USE THE ITERROWS METHOD TO ITERATE IN EACH LINE
+# Iterating over a Pandas DataFrame is typically done with the iterrows() method
 print()
 
 for lab, val in brics.iterrows():
@@ -84,8 +85,14 @@ for lab, row in brics.iterrows():
 print()
 
 for lab, row in brics.iterrows():
-    #creating Series on every iteration
+    #creating Series on every iteration, IT'S NOT VERY EFFICIENT!
     brics.loc[lab, 'name_lenght'] = len(row['country'])
 print(brics)
 print()
 
+# TRYING TO DO THINGS IN A MORE EFFICIENT WAY
+# USING THE FUNCTION APPLY (THAT DISMISS THE FOR LOOP)
+
+brics['name_lenght'] = brics['country'].apply(len)
+print(brics)
+print()
