@@ -45,3 +45,34 @@ print()
 
 #selecting observations from dataframes TAG
 
+# cars.loc['IN', 'cars_per_cap']
+# cars.iloc[3, 0]
+#
+# cars.loc[['IN', 'RU'], 'cars_per_cap']
+# cars.iloc[[3, 4], 0]
+#
+# cars.loc[['IN', 'RU'], ['cars_per_cap', 'country']]
+# cars.iloc[[3, 4], [0, 1]]
+
+
+
+# Print out drives_right value of Morocco: row label is MOR
+print(cars.loc['MOR', 'drives_right'])
+print()
+
+# Print sub-DataFrame
+print(cars.loc[['RU', 'MOR'],['country', 'drives_right']])
+print()
+
+# Print out drives_right column as Series
+print(cars.loc[:, 'drives_right'])
+print(type(cars.loc[:, 'drives_right']))
+print()
+# Print out drives_right column as DataFrame
+print(cars.loc[:, ['drives_right']])
+print(type(cars.loc[:, ['drives_right']]))
+print()
+
+# Print out cars_per_cap and drives_right as DataFrame
+print(cars.loc[:, ['cars_per_cap', 'drives_right']])
+print()
