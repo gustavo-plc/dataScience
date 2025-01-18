@@ -107,8 +107,17 @@ for lab, row in cars.iterrows():
 
 print()
 
+# creating new columns in dataframe through iteration
 for lab, row in cars.iterrows():
     cars.loc[lab, 'COUNTRY'] = row['country'].upper()
 
 print(cars)
 print()
+
+# creating new columns in dataframe using apply(): easier way
+
+# Use .apply(str.upper)
+
+cars["COUNTRY"] = cars['country'].apply(str.upper)
+print(cars)
+
