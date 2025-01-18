@@ -27,4 +27,15 @@ cars.index = row_labels
 
 # Print cars again
 print(cars)
+print()
 
+# To iterate over a dictonary obtaining its keys and values:
+
+# Definition of dictionary
+europe = {'spain': 'madrid', 'france': 'paris', 'germany': 'berlin',
+          'norway': 'oslo', 'italy': 'rome', 'poland': 'warsaw', 'austria': 'vienna'}
+
+# Iterate over europe
+
+for k, v in europe.items(): #the method items() has to be used to do so
+    print('the capital of ' + str(k) + ' is ' + str(v))
