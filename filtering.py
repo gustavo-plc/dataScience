@@ -3,6 +3,7 @@ import numpy as np
 
 brics = pd.read_csv('/home/gustavo-plc/PycharmProjects/dataScience/Python/brics.csv', index_col = 0)
 
+cars = pd.read_csv('/home/gustavo-plc/PycharmProjects/dataScience/Python/cars.csv', index_col = 0)
 # command above has just set the index column as 1, not 0 as default
 
 print(brics)
@@ -26,4 +27,36 @@ print()
 is_medium = np.logical_and(brics['area'] > 8, brics['area'] < 10)
 print(brics[is_medium])
 print()
+
+# SELECTING DATA FROM ANOTHER CSV FILE FOR WHICH THE VALUES FOR DRIVES RIGHT IS TRUE
+
+dr = cars['drives_right']
+print(dr)
+
+sel = cars[dr]
+print(sel)
+print()
+# ANOTHER SIMPLER WAY:
+
+sel = cars[cars['drives_right']]
+print(sel)
+print()
+#ANOTHER EXAMPLE:
+
+# Create car_maniac: observations that have a cars_per_cap over 500
+cpc = cars['cars_per_cap']
+print(cpc)
+print()
+
+many_cars = cpc > 500
+print(many_cars)
+print()
+
+car_maniac = cars[many_cars]  #indexing the original dataset with a boolean array
+
+# Print car_maniac
+print(car_maniac)
+print()
+
+# MORE advanced filtering operations!!
 
