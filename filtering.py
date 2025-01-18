@@ -60,3 +60,6 @@ print()
 
 # MORE advanced filtering operations!!
 
+medium = np.logical_and(cpc > 100, cpc < 500)
+
+print(cars[medium])
