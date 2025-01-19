@@ -132,5 +132,51 @@ plt.show()
 # THE MORE WE INCREASE THE NUMBER OF EVENTS, THE MORE THE DISTRIBUTION CONVERGES TO A BELL-SHAPE
 
 
+# Simulate multiple walks
 
 
+# NumPy is imported; seed is set
+
+# Initialize all_walks (don't change this line)
+all_walks = []
+
+# Simulate random walk five times
+for i in range(5) :
+    # Code from before
+    random_walk = [0] #each simulation starts from the step 0
+    for x in range(100) :
+        step = random_walk[-1] #recovering the last step value
+        dice = np.random.randint(1,7) #throwing the dice
+        if dice <= 2:
+            step = max(0, step - 1)
+        elif dice <= 5:
+            step = step + 1
+        else:
+            step = step + np.random.randint(1,7)
+        random_walk.append(step) #adding the step result to the random_walk list
+    # Append random_walk to all_walks
+    all_walks.append(random_walk) # this line adds the entire random_walk list
+    # to the all_walks list. This means that all_walks will contain each step of each walk
+
+
+# Print all_walks
+print(all_walks)
+
+# VISUALIZING ALL WALKS: TRANSFORM TO AN NUMPY ARRAY
+
+# Convert all_walks to NumPy array: np_aw
+np_aw = np.array(all_walks)
+
+# Plot np_aw and show
+plt.plot(np_aw)
+plt.show()
+
+# Clear the figure
+plt.clf()
+
+# Transpose np_aw: np_aw_t
+np_aw_t = np.transpose(np_aw)
+
+# Plot np_aw_t and show
+plt.plot(np_aw_t)
+plt.show()
