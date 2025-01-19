@@ -48,3 +48,19 @@ for x in range (10):
         outcomes.append('tails')
 
 print(outcomes)
+print()
+
+# A RANDOM WALK EXAMPLE IN THIS HEADS ANS TAILS EXAMPLE
+
+tails = [0] #at the start I've not thrown any coins yet
+
+for x in range(10):
+    coin = np.random.randint(0, 2) #a coin is flipped and the result is stored (0 or 1)
+    tails.append(tails[x] + coin) #the result is appended to the list tails updating its last result
+
+print(tails)
+
+# THE EXAMPLES ABOVE SHOWED HOW TO
+# TRANSFORM A BUNCH OF STEPS INTO A RANDOM WALK
+
+
