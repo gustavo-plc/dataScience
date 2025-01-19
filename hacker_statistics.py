@@ -1,3 +1,5 @@
+import random
+
 import numpy as np
 
 #manually setting the seed:
@@ -29,3 +31,20 @@ else :
 # Print out dice and step
 print(dice)
 print(step)
+
+# RANDOM STEPS SIMULATING A FLIPPING A COIN 10 TIMES
+
+#defining a list to store the results
+outcomes = list()
+
+for x in range (10):
+    #in each iteration, the coin variable will be
+    #updated
+
+    coin = np.random.randint(0, 2)
+    if coin == 0:
+        outcomes.append('heads')
+    else:
+        outcomes.append('tails')
+
+print(outcomes)
