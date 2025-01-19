@@ -1,6 +1,3 @@
-import random
-from os import times
-
 import numpy as np
 
 #manually setting the seed:
@@ -64,7 +61,6 @@ print()
 # THE EXAMPLES ABOVE SHOWED HOW TO
 # TRANSFORM A BUNCH OF STEPS INTO A RANDOM WALK
 
-
 #another example
 
 # Initialize random_walk
@@ -119,15 +115,20 @@ final_tails = [] # will register the number of tails we end up with by flipping 
 # 10x over and over again, lets do an example for 100 times.
 
 # event: flipping a coin 10 times
-# number of events: 100
+# number of events: 10000
 
-
-for x in range(100): #for every event, the number of tails is reseted to zero. Because the event restarts
+for x in range(10000): #for every event, the number of tails is reseted to zero. Because the event restarts
     tails = [0]
     for x in range(10): # loop that runs each of the 10 events
         coin = np.random.randint(0, 2) #flipping the coin
         tails.append(tails[x] + coin)
     final_tails.append(tails[-1])
-print(final_tails)
+plt.hist(final_tails, 10)
+plt.show()
+
+# EACH NUMBER IN THE FINAL_TAILS LIST IS THE NUMBER OF TIMES WE GOT TAILS IN A GAME OF 10 TOSSES
+# THIS CAN BE TREATED AS A DISTRIBUTION THAT WE CAN VISUALIZE: IT CALLS FOR A HISTOGRAM!
+
+# THE MORE WE INCREASE THE NUNBER OF EVENTS, THE MORE THE DISTRIBUTION CONVRGES TO A BELL-SHAPE
 
 
