@@ -91,3 +91,13 @@ for x in range(100) :
 
 # Print random_walk
 print(random_walk)
+print()
+
+# Import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
+
+# Plot random_walk
+plt.plot(random_walk)
+
+# Show the plot
+plt.show()
