@@ -141,7 +141,7 @@ plt.show()
 all_walks = []
 
 # Simulate random walk five times
-for i in range(5) :
+for i in range(500) :
     # Code from before
     random_walk = [0] #each simulation starts from the step 0
     for x in range(100) :
@@ -153,6 +153,9 @@ for i in range(5) :
             step = step + 1
         else:
             step = step + np.random.randint(1,7)
+        # Implement clumsiness
+        if np.random.rand() <= 0.005:
+            step = 0
         random_walk.append(step) #adding the step result to the random_walk list
     # Append random_walk to all_walks
     all_walks.append(random_walk) # this line adds the entire random_walk list
@@ -180,3 +183,29 @@ np_aw_t = np.transpose(np_aw)
 # Plot np_aw_t and show
 plt.plot(np_aw_t)
 plt.show()
+
+
+# Clear the figure
+plt.clf()
+
+
+# NOW HEADING TO THE ANSWER TO THE FINAL QUESTION: WHAT ARE THE ODDS TO REACH THE 60 FLOOR?
+
+
+# Select last row from np_aw_t: ends
+ends = np_aw_t[-1,:]
+
+# Plot histogram of ends, display plot
+plt.hist(ends)
+plt.show()
+
+
+print(ends)
+
+count = 0
+
+for c in range(0, len(ends)):
+    if ends[c] >= 60:
+        count += 1
+
+print(count)
