@@ -2,7 +2,6 @@
 # It's basically a way to store tabular data where you can label the rows and the columns.
 
 import pandas as pd
-from pandas.io.sql import PandasSQL
 
 # Pre-defined lists
 names = ['United States', 'Australia', 'Japan', 'India', 'Russia', 'Morocco', 'Egypt']
@@ -40,7 +39,7 @@ europe = {'spain': 'madrid', 'france': 'paris', 'germany': 'berlin',
 
 for k, v in europe.items(): #the method items() has to be used to do so
     print('the capital of ' + str(k) + ' is ' + str(v))
-
+print()
 # DATA MANIPULATION WITH Pandas!
 
 # When you get a new DataFrame to work with, the first thing you need to do is explore it and see what it contains.
@@ -50,4 +49,27 @@ for k, v in europe.items(): #the method items() has to be used to do so
 #     .info() shows information on each of the columns, such as the data type and number of missing values.
 #     .shape returns the number of rows and columns of the DataFrame.
 #     .describe() calculates a few summary statistics for each column.
+
+path = '/home/gustavo-plc/PycharmProjects/dataScience/homelessness.csv'
+homelessness_pd = pd.read_csv(path)
+
+print(homelessness_pd.head())
+print()
+print(homelessness_pd.info())
+print()
+print(homelessness_pd.describe())
+print()
+
+# DataFrames have three components: values, a column index, and a row index.
+#
+#     .values: A two-dimensional NumPy array of values. [[a, b]...[x, y]]
+#     .columns: An index of columns: the column names.
+#     .index: An index for the rows: either row numbers or row names.
+
+print(homelessness_pd.values)
+print()
+print(homelessness_pd.columns)
+print()
+print(homelessness_pd.index)
+print()
 
