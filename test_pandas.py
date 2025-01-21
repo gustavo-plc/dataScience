@@ -113,3 +113,16 @@ fam_lt_1k_pac = homelessness_pd[(homelessness_pd['region'] == 'Pacific') & (home
 
 # See the result
 print(fam_lt_1k_pac)
+print()
+# Subsetting rows by categorical variables
+
+# The Mojave Desert states
+canu = ["California", "Arizona", "Nevada", "Utah"]
+
+# Filter for rows in the Mojave Desert states
+
+mojave_homelessness = homelessness_pd['state'].isin(canu) #to select only the rows in the column state that
+# matches with at least one canu state.
+
+# See the result
+print(mojave_homelessness)
