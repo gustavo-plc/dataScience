@@ -41,5 +41,5 @@ europe = {'spain': 'madrid', 'france': 'paris', 'germany': 'berlin',
 for k, v in europe.items(): #the method items() has to be used to do so
     print('the capital of ' + str(k) + ' is ' + str(v))
 
-# DATA MANIPULATION WITH Pandas
+# DATA MANIPULATION WITH Pandas!
 
