@@ -127,3 +127,16 @@ mojave_homelessness = homelessness_pd[homelessness_pd['state'].isin(canu)]
 
 # See the result
 print(mojave_homelessness)
+print()
+
+# ADDING NEW COLUMNS TO EXISTING DATA (Other names: transforming, mutating, and feature engineering.)
+# MAKING MY OWN COLUMNS FROM WHAT I HAVE
+
+# Add total col as sum of individuals and family_members
+homelessness_pd['total'] = homelessness_pd['individuals'] + homelessness_pd['family_members']
+
+# Add p_homeless col as proportion of total homeless population to the state population
+homelessness_pd['p_homeless'] = homelessness_pd['total'] / homelessness_pd['state_pop']
+
+# See the result
+print(homelessness_pd)
