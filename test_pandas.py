@@ -99,4 +99,17 @@ print()
 ind_gt_10k = homelessness_pd[homelessness_pd['individuals'] > 10000]
 print(ind_gt_10k)
 
+# Filter for rows where region is Mountain
+mountain_reg = homelessness_pd[homelessness_pd['region'] == 'Mountain']
 
+# See the result
+print(mountain_reg)
+print()
+
+# Filter for rows where family_members is less than 1000
+# and region is Pacific
+fam_lt_1k_pac = homelessness_pd[(homelessness_pd['region'] == 'Pacific') & (homelessness_pd['family_members'] < 1000)]
+# variable = df[(cond1) & (cond2)]
+
+# See the result
+print(fam_lt_1k_pac)
