@@ -2,6 +2,7 @@
 # It's basically a way to store tabular data where you can label the rows and the columns.
 
 import pandas as pd
+from pandas.io.sql import PandasSQL
 
 # Pre-defined lists
 names = ['United States', 'Australia', 'Japan', 'India', 'Russia', 'Morocco', 'Egypt']
@@ -39,3 +40,6 @@ europe = {'spain': 'madrid', 'france': 'paris', 'germany': 'berlin',
 
 for k, v in europe.items(): #the method items() has to be used to do so
     print('the capital of ' + str(k) + ' is ' + str(v))
+
+# DATA MANIPULATION WITH Pandas
+
