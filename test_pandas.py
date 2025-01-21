@@ -73,3 +73,19 @@ print()
 print(homelessness_pd.index)
 print()
 
+# SORTING AND SUBSETTING DATA
+
+# Example of sorting values: df.sort_values(["breed", "weight_kg"])
+
+# homelessness_reg_fam = homelessness.sort_values(['region', 'family_members'], ascending = [True, False])
+
+#subsetting columns:
+
+# Select only the individuals and state columns, in that order
+ind_state = homelessness_pd[['individuals', 'state']]
+print(ind_state)
+
+# SUBSETTING ROWS: (OR FILTERING ROWS OR SELECTING ROWS)
+
+
+
