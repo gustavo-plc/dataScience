@@ -140,3 +140,27 @@ homelessness_pd['p_homeless'] = homelessness_pd['total'] / homelessness_pd['stat
 
 # See the result
 print(homelessness_pd)
+print()
+
+# answer the question, "Which state has the highest number of homeless individuals per 10,000 people in the state?"
+
+# Create indiv_per_10k col as homeless individuals per 10k state pop. RATE CREATION!
+# CREATING A NEW COLUMN THAT GIVES THE NUMBER OF HOMELESS INDIVIDUALS PER 10000 PEOPLE FOR EACH STATE
+homelessness_pd['indiv_per_10k'] = 10000 * (homelessness_pd['individuals'] / homelessness_pd['state_pop'])
+
+# Subset rows for indiv_per_10k greater than 20
+high_homelessness = homelessness_pd[homelessness_pd['indiv_per_10k'] > 20]
+
+# Sort high_homelessness by descending indiv_per_10k
+high_homelessness_srt = high_homelessness.sort_values(['indiv_per_10k'], ascending = False)
+# SORTING VALUES FROM HIGH TO LOW, HENCE ASCENDING MUST BE FALSE
+
+
+# From high_homelessness_srt, select the state and indiv_per_10k cols
+result = high_homelessness_srt.loc[:, ['state', 'indiv_per_10k']]
+
+# See the result
+print(result)
+print()
+
+
