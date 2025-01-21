@@ -121,7 +121,8 @@ canu = ["California", "Arizona", "Nevada", "Utah"]
 
 # Filter for rows in the Mojave Desert states
 
-mojave_homelessness = homelessness_pd['state'].isin(canu) #to select only the rows in the column state that
+mojave_homelessness = homelessness_pd[homelessness_pd['state'].isin(canu)]
+#to select only the rows in the column state that
 # matches with at least one canu state.
 
 # See the result
