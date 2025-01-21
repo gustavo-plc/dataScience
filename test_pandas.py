@@ -84,8 +84,19 @@ print()
 # Select only the individuals and state columns, in that order
 ind_state = homelessness_pd[['individuals', 'state']]
 print(ind_state)
+print()
+
 
 # SUBSETTING ROWS: (OR FILTERING ROWS OR SELECTING ROWS)
+#
+# IT IS ALSO POSSIBLE TO FILTER MULTIPLE CONDITIONS AT ONCE, LIKE THE EXAMPLE BELOW:
+#
+# dogs[(dogs["height_cm"] > 60) & (dogs["color"] == "tan")]
 
+#filtering by one condition
+# CREATING A NEW DATAFRAME THAT RECEIVES THE SLICE OF THE HOMELESSNESS THAT CONTAINS THE DATA WHICH RESPECTS THE REQUEST
+
+ind_gt_10k = homelessness_pd[homelessness_pd['individuals'] > 10000]
+print(ind_gt_10k)
 
 
