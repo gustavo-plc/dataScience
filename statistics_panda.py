@@ -157,3 +157,29 @@ print()
 
 # MULTIPLE COMBINATIONS CAN BE MADE
 
+
+# QUESTION 1: What percent of sales occurred at each store type?
+
+# REQUIREMENT: WITHOUT USING .GROUPBY()
+
+# Calc total weekly sales -> Here we are creating a dataset that contains only the sum of weekly sales
+sales_all = sales[['weekly_sales']].sum()
+print(sales_all)
+print()
+
+# Subset for type A stores, calc total weekly sales
+sales_A = sales[sales['type'] == 'A']['weekly_sales'].sum()
+
+# Subset for type B stores, calc total weekly sales
+sales_B = sales[sales['type'] == 'B']['weekly_sales'].sum()
+
+# Subset for type C stores, calc total weekly sales
+sales_C = sales[sales['type'] == 'C']['weekly_sales'].sum()
+
+# Get proportion for each type
+
+sales_propn_by_type = np.array([sales_A, sales_B, sales_C]) / np.array(sales_all)
+print(sales_propn_by_type)
+
+# CALCULATIONS WITH GROUPBY() METHOD
+
