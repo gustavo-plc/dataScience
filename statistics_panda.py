@@ -65,3 +65,27 @@ print()
 # AND A COMMA SEPARATING THE TWO FUNCTIONS INSIDE, LIKE THE EXAMPLE:
 
 print(sales[['temperature_c', 'fuel_price_usd_per_l', 'unemployment']].agg([iqr, np.median]))
+print()
+
+# CUMMULATIVE STATISTICS
+
+# Sort sales_1_1 by date
+sales_1_1 = sales.sort_values('date')
+print(sales_1_1['date'])
+print()
+
+# Get the cumulative sum of weekly_sales, add as cum_weekly_sales col
+sales_1_1['cum_weekly_sales'] = sales['weekly_sales'].cumsum()
+print(sales_1_1.head())
+print()
+
+# Get the cumulative max of weekly_sales, add as cum_max_sales col
+sales_1_1['cum_max_sales'] = sales['weekly_sales'].cummax()
+print(sales_1_1.head())
+print()
+
+# See the columns you calculated
+print(sales_1_1[["date", "weekly_sales", "cum_weekly_sales", "cum_max_sales"]])
+
+# COUNTING: DATA MANIPULATION WITH PANDAS
+
