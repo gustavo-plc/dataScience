@@ -119,3 +119,27 @@ print()
 
 # AFTER REMOVING DUPLICATES, IT'S TIME TO COUNT CATEGORICAL VARIABLES
 
+# Count the number of stores of each type, using value_counts() method
+store_counts = store_types['type'].value_counts()
+print(store_counts)
+print('Count the number of stores of each type')
+print()
+
+
+# Get the proportion of stores of each type
+store_props = store_types['type'].value_counts(normalize= True) #to get proportions , instead of just numbers
+print(store_props)
+print('to get proportions , instead of just numbers')
+print()
+
+# Count the number of stores for each department and sort
+dept_counts_sorted = store_depts['department'].value_counts(sort = True)
+print(dept_counts_sorted)
+print('Count the number of stores for each department and sort')
+print()
+
+# Get the proportion of stores in each department and sort
+dept_props_sorted = store_depts['department'].value_counts(sort= True, normalize=True)
+print(dept_props_sorted)
+print('Get the proportion of stores in each department and sort')
+print()
