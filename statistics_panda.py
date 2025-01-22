@@ -180,6 +180,39 @@ sales_C = sales[sales['type'] == 'C']['weekly_sales'].sum()
 
 sales_propn_by_type = np.array([sales_A, sales_B, sales_C]) / np.array(sales_all)
 print(sales_propn_by_type)
+print()
 
-# CALCULATIONS WITH GROUPBY() METHOD
+
+#CALCULATIONS WITH GROUPBY() METHOD
+
+
+# Group by type; calc total weekly sales
+sales_by_type = sales.groupby('type')['weekly_sales'].sum()
+print(sales_by_type)
+print()
+# Get proportion for each type
+sales_propn_by_type = sales_by_type / sum(sales_by_type)
+print(sales_propn_by_type)
+print()
+
+# From previous step
+sales_by_type = sales.groupby("type")["weekly_sales"].sum()
+
+# Group by type and is_holiday; calc total weekly sales
+#grouping by two variables to calculate one: total weekly sales
+sales_by_type_is_holiday = sales.groupby(['type', 'is_holiday'])['weekly_sales'].sum()
+print(sales_by_type_is_holiday)
+
+# LET'S DO A LITTLE BIT MORE:
+#
+# GROUP BY TYPE AND IS HOLIDAY TO CALCULATE WEEKLY SALES SUM AND TEMPERATURE AVERAGE
+
+def pct40(column):
+    return column.quantile(0.4)
+
+sales_by_type_is_holiday_2 = sales.groupby(['type', 'is_holiday'])[['weekly_sales', 'temperature_c']].agg([sum, pct40])
+print(sales_by_type_is_holiday_2)
+
+
+# MULTIPLE GROUPED SUMMARIES
 
