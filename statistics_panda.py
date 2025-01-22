@@ -207,10 +207,8 @@ print(sales_by_type_is_holiday)
 #
 # GROUP BY TYPE AND IS HOLIDAY TO CALCULATE WEEKLY SALES SUM AND TEMPERATURE AVERAGE
 
-def pct40(column):
-    return column.quantile(0.4)
 
-sales_by_type_is_holiday_2 = sales.groupby(['type', 'is_holiday'])[['weekly_sales', 'temperature_c']].agg([sum, pct40])
+sales_by_type_is_holiday_2 = sales.groupby(['type', 'is_holiday'])[['weekly_sales', 'temperature_c']].agg([sum, np.mean])
 print(sales_by_type_is_holiday_2)
 
 
