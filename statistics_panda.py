@@ -1,5 +1,8 @@
+from xmlrpc.client import METHOD_NOT_FOUND
+
 import pandas as pd
 import numpy as np
+from matplotlib.colors import ColorSequenceRegistry
 
 path = '/home/gustavo-plc/PycharmProjects/dataScience/sales_subset.csv'
 sales = pd.read_csv(path)
@@ -143,3 +146,14 @@ dept_props_sorted = store_depts['department'].value_counts(sort= True, normalize
 print(dept_props_sorted)
 print('Get the proportion of stores in each department and sort')
 print()
+
+# INTRODUCING THE GROUPBY METHOD
+# IT IS USEFUL FOR OBTAINING STATISTICS VALUES OF AN ATTRIBUTE
+# IN RESPECT OF ANOTHER ATTRIBUTE
+#
+# FOR EXAMPLE: TO EASILY CALCULATE THE MEAN WEIGHT (OR MORE THAN JUST ONE VARIABLE) FROM ALL DOG COLORS
+# (AND BREEDS FOR EXAMPLE) WE CAN GROUP BY THE COLOR (AND BREED...) VARIABLE, SELECT THE WEIGHT (AND HEIGHT FOR EXAMPLE)
+# COLOR AND TAKE THE MEAN OR USE THE AGG METHOD TO GET MULTIPLE STATISTICS
+
+# MULTIPLE COMBINATIONS CAN BE MADE
+
