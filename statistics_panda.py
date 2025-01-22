@@ -88,4 +88,34 @@ print()
 print(sales_1_1[["date", "weekly_sales", "cum_weekly_sales", "cum_max_sales"]])
 
 # COUNTING: DATA MANIPULATION WITH PANDAS
+# SUMMARIZING CATEGORICAL DATA
+
+# Dropping duplicates
+
+# Drop duplicate store/type combinations: using method drop_duplicates applied to the target column(s)-[1 or more]
+store_types = sales.drop_duplicates(subset = ['store', 'type'])
+#removing the entries that have the same store name AND same type
+print(store_types.head())
+print('Drop duplicate store/type combinations')
+print()
+
+# Drop duplicate store/department combinations
+store_depts = sales.drop_duplicates(subset = ['store', 'department'])
+#removing entries that have same store name and same department
+print(store_depts.head())
+print('Drop duplicate store/department combinations')
+print()
+
+# Subset the rows where is_holiday is True and drop duplicate dates
+holiday_dates = sales[sales['is_holiday'] == True].drop_duplicates(subset = 'date')
+#the line above creates a subset from sales that has only the entries which is_holyday is True.
+#Then, the date duplicates are removed
+#the result is saved on a new dataframe, called holiday_dates
+
+# Print date col of holiday_dates
+print(holiday_dates['date'])
+print('Subset the rows where is_holiday is True and drop duplicate dates')
+print()
+
+# AFTER REMOVING DUPLICATES, IT'S TIME TO COUNT CATEGORICAL VARIABLES
 
