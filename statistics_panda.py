@@ -214,3 +214,15 @@ print(sales_by_type_is_holiday_2)
 
 # MULTIPLE GROUPED SUMMARIES
 
+# For each store type, aggregate weekly_sales: get min, max, mean, and median
+#calculating min, max, mean and median for weekly sales, for each store type (grouped by store type)
+sales_stats = sales.groupby(['type'])['weekly_sales'].agg([np.min, np.max, np.mean, np.median])
+
+# Print sales_stats
+print(sales_stats)
+
+# For each store type, aggregate unemployment and fuel_price_usd_per_l: get min, max, mean, and median
+unemp_fuel_stats = sales.groupby(['type'])[['unemployment', 'fuel_price_usd_per_l']].agg([np.min, np.max, np.mean, np.median])
+
+# Print unemp_fuel_stats
+print(unemp_fuel_stats)
