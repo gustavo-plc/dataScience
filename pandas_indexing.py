@@ -29,3 +29,20 @@ print(temperatures_ind.reset_index(drop = True))
 print()
 
 # Setting an index allows more concise code for subsetting for rows of a categorical variable via .loc[]
+
+# Subsetting with .loc[]
+# .loc[]: a subsetting method that accepts index values.
+
+# Make a list of cities to subset on
+#just creating a simple list
+cities = ['Moscow', 'Saint Petersburg']
+
+# Subset temperatures using square brackets
+#showing just the rows of the original dataset which has Moscow and St. Pet. as the city
+print(temperatures[temperatures['city'].isin(cities)])
+print()
+
+# Subset temperatures_ind using .loc[]
+#another way to do the subsetting
+print(temperatures_ind.loc[cities])
+print()
