@@ -261,4 +261,15 @@ print()
 
 # Pivot tables are another way to do the same thing as a group-by-then-summarize.
 
+# Fill in missing values and sum values with pivot tables
 
+# Print mean weekly_sales by department and type; fill missing values with 0
+print(sales.pivot_table(values = 'weekly_sales', index = 'department', columns = 'type', fill_value = 0))
+print()
+
+# MARGINS: margins is a shortcut for when you pivoted by two variables, but also wanted to pivot by each of those
+# variables separately: it gives the row and column totals of the pivot table contents.
+
+# Print the mean weekly_sales by department and type; fill missing values with 0s; sum all rows and cols
+print(sales.pivot_table(values="weekly_sales", index="department", columns="type", fill_value = 0, margins = True))
+print()
