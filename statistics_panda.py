@@ -1,5 +1,3 @@
-from xmlrpc.client import METHOD_NOT_FOUND
-
 import pandas as pd
 import numpy as np
 from matplotlib.colors import ColorSequenceRegistry
