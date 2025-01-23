@@ -46,3 +46,7 @@ print()
 #another way to do the subsetting
 print(temperatures_ind.loc[cities])
 print()
+
+# THE IDEA HERE IS TO SET AN INDEX TO FACILITATE THE USE OF .LOC() METHOD
+# THIS MAKES THE CODE EASY TO UNDERSTAND AND IT IS A BEST VISUAL
+
