@@ -226,3 +226,35 @@ unemp_fuel_stats = sales.groupby(['type'])[['unemployment', 'fuel_price_usd_per_
 
 # Print unemp_fuel_stats
 print(unemp_fuel_stats)
+print()
+
+
+# AGGREGATING DATA USING PIVOT TABLES: the standard way of aggregating data in spreadsheets.
+
+# .pivot_table() method is an alternative to .groupby() method
+
+# Pivoting on one variable
+
+# Pivot for mean weekly_sales for each store type
+# for each store type, I want the mean value of weekly sales
+
+mean_sales_by_type = sales.pivot_table(values = 'weekly_sales', index = 'type') #the pivot_table method provides the
+# mean by default!
+
+# Print mean_sales_by_type
+print(mean_sales_by_type)
+print()
+
+# Pivot for mean and median weekly_sales for each store type
+mean_med_sales_by_type = sales.pivot_table(values = 'weekly_sales', index = 'type', aggfunc= [np.mean, np.median])
+
+# Print mean_med_sales_by_type
+print(mean_med_sales_by_type)
+print()
+
+# Pivot for mean weekly_sales by store type and holiday
+mean_sales_by_type_holiday = sales.pivot_table(values = 'weekly_sales', index = ['type', 'is_holiday'])
+
+# Print mean_sales_by_type_holiday
+print(mean_sales_by_type_holiday)
+
