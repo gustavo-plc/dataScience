@@ -178,7 +178,29 @@ print()
 #mind-blowing: I have to have an index already set for the DF to use loc method.
 # It doesn't work on DF that have no index set up.
 
+# USING ILOC TO SLICE DF TRHOUGH ROW AND COLUMN INDEXES
 
+# Get 23rd row, 2nd column (index 22, 1)
+print(temperatures.iloc[22, 1])
+print()
+
+# Use slicing to get the first 5 rows
+print(temperatures.iloc[:5])
+
+# Use slicing to get columns 3 to 4
+print(temperatures.iloc[:, 2:4])
+
+# Use slicing in both directions at once
+print(temperatures.iloc[:5, 2:4])
+
+
+
+# SUBSETTING AND CALCULATIONS ON PIVOT TABLES
+
+# PIVOT TABLES ARE DATAFRAMES WITH SORTED INDEXES
+# ALL WE CAN DO ON DF CAN BE DONE ALSO IN PIVOT TABLES
+
+# THE .LOC() METHOD + SLICING IS IDEAL TO SUBSETTING PIVOT TABLES
 
 
 
