@@ -55,6 +55,8 @@ print()
 
 # Setting multi-level indexes
 
+# make it easy to comprehend your dataset when one category is nested inside another category.
+
 # Index temperatures by country & city: setting two hierarchical features as indexes
 # this way, when printing the dataframe, two columns will be shown as indexes and the first one
 # will act as the outer level and the second, the inner level
@@ -64,11 +66,27 @@ print(temperatures_ind2)
 print()
 
 # List of tuples: Brazil, Rio De Janeiro & Pakistan, Lahore
-#rows_to_keep = [____]
+# in a hierarchical way, in other words, taking first a country and then a city, we can
+# pass them as tuples to a list, to save the rows that will be ketp.
+
+rows_to_keep = [('Brazil', 'Rio De Janeiro'), ('Pakistan', 'Lahore')]
 
 # Subset for rows to keep
-#print(temperatures_ind2.____)
+print(temperatures_ind2.loc[rows_to_keep])
+print()
 
+# Sorting by index values
+# CHANGING THE ORDER OF THE DATAFRAME ELEMENTS BY SORTING THEM BY INDEX VALUES
+# DIFFERENTLY FROM BEFORE, WHEN THEY WERE SORTED BY VALUES
+
+# Sort temperatures_ind by index values
+print(____)
+
+# Sort temperatures_ind by index values at the city level
+print(____)
+
+# Sort temperatures_ind by country then descending city
+print(____)
 
 
 
