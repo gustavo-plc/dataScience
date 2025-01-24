@@ -145,7 +145,7 @@ print('Subset rows from India, Hyderabad to Iraq, Baghdad')
 print()
 
 # Subset columns from date to avg_temp_c: THEN COLUMNS
-print(temperatures_srt.loc['date':'avg_temp_c'])
+print(temperatures_srt.loc[:, 'date':'avg_temp_c'])
 print('Subset columns from date to avg_temp_c')
 print()
 
@@ -153,6 +153,30 @@ print()
 print(temperatures_srt.loc[('India','Hyderabad'):('Iraq','Baghdad'),'date':'avg_temp_c'])
 print('Subset in both directions at once')
 print()
+
+# Slicing time series (dates): dates in ISO 8601 format, that is, "yyyy-mm-dd"
+# for year-month-day, "yyyy-mm" for year-month, and "yyyy" for year.
+
+
+# Use Boolean conditions to subset temperatures for rows in 2010 and 2011
+temperatures_bool = temperatures[(temperatures['date'] >= '2010-01-01') & (temperatures['date'] <= '2011-12-31')]
+print(temperatures_bool)
+print('printing temperatures subset from 2010 to 2011')
+print()
+
+# Set date as the index and sort the index
+temperatures_ind3 = temperatures.set_index('date').sort_index()
+
+# Use .loc[] to subset temperatures_ind3 for rows in 2010 and 2011
+print(temperatures_ind3.loc['2010':'2011'])
+print()
+
+# Use .loc[] to subset temperatures_ind3 for rows from Aug 2010 to Feb 2011
+print(temperatures_ind3.loc['2010-08':'2011-02'])
+print()
+
+#mind-blowing: I have to have an index already set for the DF to use loc method.
+# It doesn't work on DF that have no index set up.
 
 
 
