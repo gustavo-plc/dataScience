@@ -202,6 +202,23 @@ print(temperatures.iloc[:5, 2:4])
 
 # THE .LOC() METHOD + SLICING IS IDEAL TO SUBSETTING PIVOT TABLES
 
+#FIRST CONVERT THE DATA ON THE DATE COLUMN TO A DATE-TIME-FORMAT
+temperatures['date'] = pd.to_datetime(temperatures['date'])
+
+print(temperatures['date'].dtype)
 
 
+# Add a year column to temperatures
+temperatures['year'] = temperatures['date'].dt.year
+#the column year was added to DF temperatures by accessing the component year of the date
+
+# Pivot avg_temp_c by country and city vs year
+temp_by_country_city_vs_year = temperatures.pivot_table(values = 'avg_temp_c', index = ['country', 'city'], columns = 'year')
+#the columns of the pivot table will be the years
+# the values on each cell will be avg_temp
+# the rows will be grouped by country and city (index field)
+
+# See the result
+print(temp_by_country_city_vs_year)
+print()
 
