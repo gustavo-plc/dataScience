@@ -100,6 +100,62 @@ print(temperatures_ind2.sort_index(ascending = [True, False]))
 print('Sorted by outer level: country, and showing descending city ')
 print()
 
+# SLICING (SLICE) A DATAFRAME BY VALUES
+
+# ROWS
+
+#IN THE OUTER LEVEL: CALL THE LOC METHOD WITH THE INDEX VALUES [THE LAST ELEMENT IS INCLUDED,
+# DIFFERENTLY FROM THE LIST SLICING
+
+# IN THE INNER LEVEL: BE CAREFUL! IT HAS TO BE CORRECTLY WRITTEN.
+# WE HAVE TO PASS THE FIRST AND THE LAST POSITIONS AS TUPLES!
+
+#COLUMNS
+
+# TO KEEP ALL ROWS, PASS A COLON (:) AS THE FIRST ARGUMENT TO LOC
+# THE SECOND ARGUMENT OF LOC RECEIVES THE FIRST AND THE LAST COLUMNS TO SLICE
+
+#SLICE SLICING DATES: AS PASSING A DATE AS AN ARGUMENT TO THE FUNCTION LOC, WE CAN SLICE BY PARTIAL DATES
+
+# Compared to slicing lists, there are a few things to remember.
+#
+#     You can only slice an index if the index is sorted (using .sort_index()).
+#     To slice at the outer level, first and last can be strings.
+#     To slice at inner levels, first and last should be tuples.
+#     If you pass a single slice to .loc[], it will slice the rows.
+
+# Sort the index of temperatures_ind
+temperatures_srt = temperatures_ind2.sort_index()
+
+# Subset rows from Pakistan to Russia
+# HERE WE ARE SUBSETTING THE OUTER LEVEL OF A HIERARCHICAL DATAFRAME
+print(temperatures_srt.loc['Pakistan': 'Russia'])
+print()
+
+# Subset rows from Pakistan, Lahore to Russia, Moscow
+# HERE WE ARE SLICING THE INNER LEVEL, SO WE MUST PASS TUPLES AS START AND END
+print(temperatures_srt.loc[('Pakistan', 'Lahore'): ('Russia', 'Moscow')])
+print()
+
+# slicing in two directions dimensions at once
+
+# Subset rows from India, Hyderabad to Iraq, Baghdad: FIRST JUST ROWS
+print(temperatures_srt.loc[('India','Hyderabad'):('Iraq','Baghdad')])
+print('Subset rows from India, Hyderabad to Iraq, Baghdad')
+print()
+
+# Subset columns from date to avg_temp_c: THEN COLUMNS
+print(temperatures_srt.loc['date':'avg_temp_c'])
+print('Subset columns from date to avg_temp_c')
+print()
+
+# Subset in both directions at once
+print(temperatures_srt.loc[('India','Hyderabad'):('Iraq','Baghdad'),'date':'avg_temp_c'])
+print('Subset in both directions at once')
+print()
+
+
+
 
 
 
