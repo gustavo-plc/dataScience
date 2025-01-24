@@ -48,5 +48,28 @@ print(temperatures_ind.loc[cities])
 print()
 
 # THE IDEA HERE IS TO SET AN INDEX TO FACILITATE THE USE OF .LOC() METHOD
-# THIS MAKES THE CODE EASY TO UNDERSTAND AND IT IS A BEST VISUAL
+# THIS MAKES THE CODE EASY TO UNDERSTAND AND IT IS BEST VISUALLY
+
+
+# HIERARCHICAL INDEXES
+
+# Setting multi-level indexes
+
+# Index temperatures by country & city: setting two hierarchical features as indexes
+# this way, when printing the dataframe, two columns will be shown as indexes and the first one
+# will act as the outer level and the second, the inner level
+
+temperatures_ind2 = temperatures.set_index(['country', 'city'])
+print(temperatures_ind2)
+print()
+
+# List of tuples: Brazil, Rio De Janeiro & Pakistan, Lahore
+#rows_to_keep = [____]
+
+# Subset for rows to keep
+#print(temperatures_ind2.____)
+
+
+
+
 
