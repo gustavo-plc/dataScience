@@ -79,14 +79,26 @@ print()
 # CHANGING THE ORDER OF THE DATAFRAME ELEMENTS BY SORTING THEM BY INDEX VALUES
 # DIFFERENTLY FROM BEFORE, WHEN THEY WERE SORTED BY VALUES
 
+# use of method sort_index()
+
 # Sort temperatures_ind by index values
-print(____)
+# as the index was set in a nested way as country and city, the code will
+# sort alphabetically first the outer level and for each one, the inner level
+
+print(temperatures_ind2.sort_index())
+print('Sorted by index')
+print()
 
 # Sort temperatures_ind by index values at the city level
-print(____)
+# controlling the level of the sorting
+print(temperatures_ind2.sort_index(level= ['city']))
+print('Sorted by inner level: city')
+print()
 
 # Sort temperatures_ind by country then descending city
-print(____)
+print(temperatures_ind2.sort_index(ascending = [True, False]))
+print('Sorted by outer level: country, and showing descending city ')
+print()
 
 
 
