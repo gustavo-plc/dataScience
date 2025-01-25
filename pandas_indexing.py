@@ -222,3 +222,41 @@ temp_by_country_city_vs_year = temperatures.pivot_table(values = 'avg_temp_c', i
 print(temp_by_country_city_vs_year)
 print()
 
+
+# Subsetting pivot tables (subset)
+
+
+# Subset for Egypt to India
+temp_by_country_city_vs_year.loc['Egypt':'India']
+
+# Subset for Egypt, Cairo to India, Delhi
+temp_by_country_city_vs_year.loc[('Egypt', 'Cairo'):('India', 'Delhi')]
+
+# Subset for Egypt, Cairo to India, Delhi, and 2005 to 2010
+
+temp_by_country_city_vs_year.loc[('Egypt', 'Cairo'):('India', 'Delhi'), '2005':'2010']
+
+
+# CALCULATING ON A PIVOT TABLE
+
+# THE TOOL TO GET IT DONE: SPECIFY A CORRECT ARGUMENT FOR THE STSTS FUNCTION OF THE DF
+
+# EXAMPLE: TO GET THE MEAN, YOU CAN SIMPLY WRITE THE DF'S NAME AND CALL THE MEAN METHOD.
+# INSIDE THE METHOD, THE ARGUMENT AXIS HAS TO RECEIVE 'INDEX' (IF YOU WANT THE STATS TO BE CALCULATED OVER ROWS) OR
+# 'COLUMNS' (IF YOU WANT THE STATS TO BE CALCULATED OVER COLUMNS).
+
+# Get the worldwide mean temp by year
+# the DF itself has an argument called axis that points to where the calculation will be done.
+
+mean_temp_by_year = temp_by_country_city_vs_year.mean(axis = 'index')
+
+print(mean_temp_by_year)
+
+# Filter for the year that had the highest mean temp
+print(mean_temp_by_year[mean_temp_by_year[:] == mean_temp_by_year[:].max()])
+
+# Get the mean temp by city
+mean_temp_by_city = temp_by_country_city_vs_year.mean(axis = 'columns')
+
+# Filter for the city that had the lowest mean temp
+print(mean_temp_by_city[mean_temp_by_city[:] == mean_temp_by_city[:].min()])
